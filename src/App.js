@@ -9,10 +9,16 @@ const App = () => {
 
 	const [todoTitle, setTodoTitle] = useState('');
 
-  const addTodo = event => {
+	const addTodo = event => {
+		if (event.key === 'Enter') {
+			setTodos(...todos, {
+				title: todoTitle,
+				completed: false,
+				id: Date.now(),
+			});
+		}
+	};
 
-  }
-  
 	return (
 		<div className="container">
 			<h1>Todo app</h1>
