@@ -9,12 +9,21 @@ const App = () => {
 
 	const [todoTitle, setTodoTitle] = useState('');
 
+  const addTodo = event => {
+
+  }
+  
 	return (
 		<div className="container">
 			<h1>Todo app</h1>
 
 			<div className="input-field">
-				<input type="text" value={todoTitle} onChange={event => setTodoTitle(event.target.value)} />
+				<input
+					type="text"
+					value={todoTitle}
+					onChange={event => setTodoTitle(event.target.value)}
+					onKeyPress={addTodo}
+				/>
 				<label>Todo name</label>
 			</div>
 
