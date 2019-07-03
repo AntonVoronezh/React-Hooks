@@ -5,8 +5,12 @@ export default function TodoItem({ title, id, completed }) {
 
 	const cls = ['todo'];
 
+	if (isCompleted) {
+		cls.push('completed');
+	}
+
 	return (
-		<li className="todo">
+		<li className={cls.join(' ')}>
 			<label>
 				<input type="checkbox" defaultChecked={false} />
 				<span>{title}</span>
