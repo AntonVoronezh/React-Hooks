@@ -21,7 +21,7 @@ const App = () => {
 			]);
 		}
 
-		setTodoTitle('');
+		// setTodoTitle('');
 	};
 
 	return (

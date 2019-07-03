@@ -12,7 +12,7 @@ export default function TodoItem({ title, id, completed }) {
 	return (
 		<li className={cls.join(' ')}>
 			<label>
-				<input type="checkbox" defaultChecked={false} />
+				<input type="checkbox" defaultChecked={false} onChange={() => setIsCompleted(!isCompleted)} />
 				<span>{title}</span>
 
 				<i className="material-icons red-text">delete</i>
