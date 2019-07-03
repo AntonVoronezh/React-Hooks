@@ -14,7 +14,7 @@ const App = () => {
 			<h1>Todo app</h1>
 
 			<div className="input-field">
-				<input type="text" />
+				<input type="text" value={todoTitle} onChange={event => setTodoTitle(event.target.value)} />
 				<label>Todo name</label>
 			</div>
 
