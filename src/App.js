@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import TodoList from './TodoList';
 
 const App = () => {
-	// state = {
-	//   todos: [
-	//     {id: 1, title: 'First todo', completed: false},
-	//     {id: 2, title: 'Second todo', completed: true},
-	//   ]
-	// }
+	const [todos, setTodos] = useState([
+		{ id: 1, title: 'First todo', completed: false },
+		{ id: 2, title: 'Second todo', completed: true },
+	]);
 
 	return (
 		<div className="container">
