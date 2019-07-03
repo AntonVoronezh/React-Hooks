@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 export default function TodoItem({ title, id, completed }) {
 	const [isCompleted, setIsCompleted] = useState(completed);
 
+	const cls = ['todo'];
+
 	return (
 		<li className="todo">
 			<label>
