@@ -7,6 +7,8 @@ const App = () => {
 		{ id: 2, title: 'Second todo', completed: true },
 	]);
 
+	const [todoTitle, setTodoTitle] = useState('');
+
 	return (
 		<div className="container">
 			<h1>Todo app</h1>
@@ -16,7 +18,7 @@ const App = () => {
 				<label>Todo name</label>
 			</div>
 
-			<TodoList todos={this.state.todos} />
+			<TodoList todos={todos} />
 		</div>
 	);
 };
