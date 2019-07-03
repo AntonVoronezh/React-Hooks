@@ -11,12 +11,17 @@ const App = () => {
 
 	const addTodo = event => {
 		if (event.key === 'Enter') {
-			setTodos(...todos, {
-				title: todoTitle,
-				completed: false,
-				id: Date.now(),
-			});
+			setTodos([
+				...todos,
+				{
+					title: todoTitle,
+					completed: false,
+					id: Date.now(),
+				},
+			]);
 		}
+
+		setTodoTitle('');
 	};
 
 	return (
