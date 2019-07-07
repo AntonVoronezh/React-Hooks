@@ -26,15 +26,19 @@ const App = () => {
 
 	const addTodo = event => {
 		if (event.key === 'Enter') {
-			setTodos([
-				...state,
-				// ...todos,
-				{
-					title: todoTitle,
-					completed: false,
-					id: Date.now(),
-				},
-			]);
+			dispatch({
+				type: 'ADD',
+				payload: todoTitle
+			})
+			// setTodos([
+			// 	...state,
+			// 	// ...todos,
+			// 	{
+			// 		title: todoTitle,
+			// 		completed: false,
+			// 		id: Date.now(),
+			// 	},
+			// ]);
 		}
 
 		// setTodoTitle('');
