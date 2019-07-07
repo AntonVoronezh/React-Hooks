@@ -10,9 +10,8 @@ const App = () => {
 	const [todoTitle, setTodoTitle] = useState('');
 
 	useEffect(() => {
-		console.log('init');
-		
-	})
+		localStorage.setItem('todos', JSON.stringify(todos));
+	}, [todos]);
 
 	const addTodo = event => {
 		if (event.key === 'Enter') {
