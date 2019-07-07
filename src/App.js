@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
 import TodoList from './TodoList';
+import { Context } from './context';
 
 const App = () => {
 	const [todos, setTodos] = useState([
@@ -34,21 +36,23 @@ const App = () => {
 	};
 
 	return (
-		<div className="container">
-			<h1>Todo app</h1>
+		<Context.Provider>
+			<div className="container">
+				<h1>Todo app</h1>
 
-			<div className="input-field">
-				<input
-					type="text"
-					value={todoTitle}
-					onChange={event => setTodoTitle(event.target.value)}
-					onKeyPress={addTodo}
-				/>
-				<label>Todo name</label>
+				<div className="input-field">
+					<input
+						type="text"
+						value={todoTitle}
+						onChange={event => setTodoTitle(event.target.value)}
+						onKeyPress={addTodo}
+					/>
+					<label>Todo name</label>
+				</div>
+
+				<TodoList todos={todos} />
 			</div>
-
-			<TodoList todos={todos} />
-		</div>
+		</Context.Provider>
 	);
 };
 
