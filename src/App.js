@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TodoList from './TodoList';
 
 const App = () => {
 	const [todos, setTodos] = useState([
-		{ id: 1, title: 'First todo', completed: false },
-		{ id: 2, title: 'Second todo', completed: true },
+		// { id: 1, title: 'First todo', completed: false },
+		// { id: 2, title: 'Second todo', completed: true },
 	]);
 
 	const [todoTitle, setTodoTitle] = useState('');
+
+	useEffect(() => {
+		console.log('init');
+		
+	})
 
 	const addTodo = event => {
 		if (event.key === 'Enter') {
