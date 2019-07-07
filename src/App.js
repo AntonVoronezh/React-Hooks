@@ -38,9 +38,18 @@ const App = () => {
 	const removeTodo = id => {
 		setTodos(todos.filter(todo => todo.id !== id));
 	};
+	const toggleTodo = id => {
+		setTodos(
+			todos.map(todo => {
+				if (todo.id === id) {
+					todo.completed = !todo.completed;
+				}
+			})
+		);
+	};
 
 	return (
-		<Context.Provider value={{removeTodo}}>
+		<Context.Provider value={{ removeTodo, toggleTodo }}>
 			<div className="container">
 				<h1>Todo app</h1>
 
