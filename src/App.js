@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 
 import TodoList from './TodoList';
 import { Context } from './context';
+import reducer from './reducer';
 
 const App = () => {
+	const [state, dispatch] = useReducer(reducer, []);
+
 	const [todos, setTodos] = useState([
 		// { id: 1, title: 'First todo', completed: false },
 		// { id: 2, title: 'Second todo', completed: true },
