@@ -20,16 +20,16 @@ const App = () => {
 	// }, []);
 
 	useEffect(() => {
-		localStorage.setItem('todos', JSON.stringify(todos));
-	// }, [todos]);
+		localStorage.setItem('todos', JSON.stringify(state));
+		// }, [todos]);
 	}, [state]);
 
 	const addTodo = event => {
 		if (event.key === 'Enter') {
 			dispatch({
 				type: 'ADD',
-				payload: todoTitle
-			})
+				payload: todoTitle,
+			});
 			// setTodos([
 			// 	...state,
 			// 	// ...todos,
@@ -59,8 +59,8 @@ const App = () => {
 	// };
 
 	return (
-		<Context.Provider value={{ }}>
-		{/* <Context.Provider value={{ removeTodo, toggleTodo }}> */}
+		<Context.Provider value={{ dispatch }}>
+			{/* <Context.Provider value={{ removeTodo, toggleTodo }}> */}
 			<div className="container">
 				<h1>Todo app</h1>
 
