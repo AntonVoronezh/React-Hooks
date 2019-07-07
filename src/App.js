@@ -44,6 +44,7 @@ const App = () => {
 				if (todo.id === id) {
 					todo.completed = !todo.completed;
 				}
+				return todo;
 			})
 		);
 	};
