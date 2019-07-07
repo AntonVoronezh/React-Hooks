@@ -35,8 +35,12 @@ const App = () => {
 		// setTodoTitle('');
 	};
 
+	const removeTodo = id => {
+		setTodos(todos.filter(todo => todo.id !== id));
+	};
+
 	return (
-		<Context.Provider>
+		<Context.Provider value={{removeTodo}}>
 			<div className="container">
 				<h1>Todo app</h1>
 
